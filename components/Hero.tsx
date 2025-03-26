@@ -75,7 +75,7 @@ function Hero() {
               scale={1.1}
               threshold={0.2}
             >
-              <div className='p-4'>
+              <div className='flex p-4 justify-center items-center'>
                 <CustomButon text="Download CV" />
               </div>
               <div className='flex flex-grow items-center justify-center py-2 mx-auto'>
