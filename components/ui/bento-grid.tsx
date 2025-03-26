@@ -60,7 +60,6 @@ export const BentoGridItem = ({
           <a href={source} target="_blank" className="inline-block">
             <div className="relative ml-2 flex items-center justify-center h-8 w-8 p-[1.5px] rounded-full">
               <span className="absolute inset-0 animate-[spin_2s_linear_infinite] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"></span>
-
               <div className="relative p-2 flex h-full w-full items-center justify-center bg-slate-950 rounded-full">
                 <IconBrandGithub color="white" className="flex" />
               </div>
