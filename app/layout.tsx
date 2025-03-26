@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Varela } from "next/font/google";
 import "./globals.css";
+import ReactLenis from "lenis/react";
 
 const varela = Varela({
   weight: "400",
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body
         className={`${varela.variable} antialiased`}
       >
+        <ReactLenis root>
         {children}
+        </ReactLenis>
       </body>
     </html>
   );

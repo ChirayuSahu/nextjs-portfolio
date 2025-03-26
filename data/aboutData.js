@@ -11,6 +11,7 @@ export const gridData=[
     img: "/project1.png",
     url: "http://mood-selector.vercel.app",
     source: "https://github.com/ChirayuSahu/moodSelector",
+    techStack: ["next js", "tailwind css"],
   },
   {
     title: "Website for Rajesh Pharma",

@@ -35,8 +35,9 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   url?: string;
-  source?: string
+  source?: string;
 }) => {
+
   return (
     <div
       className={cn(
@@ -49,26 +50,26 @@ export const BentoGridItem = ({
         <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 text-2xl dark:text-neutral-200">
           {title}
         </div>
-        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300 line-clamp-5 overflow-clip">
+        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300 line-clamp-5">
           {description}
         </div>
       </div>
-      <div className="flex space-y-2 flex-wrap sm:space-y-0 sm:space-x-2 group-hover/bento:-translate-y-1 mt-6 md:mt-0">
+      <div className="flex sm:space-x-2 mt-6 md:mt-0 mb-0">
         <CustomButton text="Link" url={url} />
         {source?.trim() ? (
-          <a href={source} target="_blank">
-          <div className="h-8 pt-[3.5px] ml-2 bg-black rounded-4xl">
-            <IconBrandGithub color="white"/>
+          <a href={source} target="_blank" className="inline-block">
+          <div className="p-2 h-8 ml-2 bg-black rounded-4xl flex items-center justify-center">
+            <IconBrandGithub color="white" className="flex"/>
           </div>
           </a>
         ) : null}
       </div>
       <div className="absolute z-[-1] -bottom-20 -right-20">
         <CircularText
-          text="HAHAHAHAHAHAHA"
+          text={`=-=-=-=-=-=-=-`}
           onHover="slowDown"
           spinDuration={10}
-          className="opacity-50"
+          className="opacity-50 uppercase"
         />
       </div>
     </div>

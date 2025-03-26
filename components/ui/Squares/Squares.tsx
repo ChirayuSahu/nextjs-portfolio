@@ -34,17 +34,7 @@ const Squares: React.FC<SquaresProps> = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-
-    const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      numSquaresX.current = Math.ceil(canvas.width / squareSize) + 1;
-      numSquaresY.current = Math.ceil(canvas.height / squareSize) + 1;
-    };
-
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
+    
     const drawGrid = () => {
       if (!ctx) return;
 
@@ -87,6 +77,26 @@ const Squares: React.FC<SquaresProps> = ({
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     };
+
+    const resizeCanvas = () => {
+      const parent = canvas.parentElement;
+      if (!parent) return;
+    
+      // Set canvas size based on parent dimensions
+      canvas.width = parent.clientWidth;
+      canvas.height = parent.clientHeight;
+    
+      numSquaresX.current = Math.ceil(canvas.width / squareSize);
+      numSquaresY.current = Math.ceil(canvas.height / squareSize);
+    
+      drawGrid(); // Redraw grid to prevent stretching
+    };
+    
+    
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
 
     const updateAnimation = () => {
       const effectiveSpeed = Math.max(speed, 0.1);

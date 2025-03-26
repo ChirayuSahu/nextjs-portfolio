@@ -8,16 +8,17 @@ import { gridData } from "@/data/aboutData";
 export function Grid() {
   return (
     <>
-      <div className="bg-black h-full">
-        <div className="absolute z-0 w-full">
+      <div className="bg-black h-full relative">
+        <div className="absolute z-0 bottom-0 top-0 w-full">
           <Squares
-            speed={0.4}
+            speed={0.2}
             squareSize={50}
-            direction='diagonal' // up, down, left, right, diagonal
+            direction='down' // up, down, left, right, diagonal
             borderColor='#FFFFFF'
             hoverFillColor='#393BB2'
           />
         </div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-transparent to-black/80 pointer-events-none"></div>
         <div className="relative z-50">
           <BentoGrid className="max-w-7xl p-10 h-full">
             {gridData.map((item, i) => (
