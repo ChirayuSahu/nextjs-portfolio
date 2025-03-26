@@ -26,6 +26,7 @@ export function Grid() {
                 title={item.title}
                 description={item.description}
                 url={item.url || '#'}
+                source={item.source}
                 className={i === 3 || i === 6 ? "md:col-span-2" : ""}
               />
             ))}

@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import CustomButton from "./CustomButon";
+import { IconBrandGithub } from "@tabler/icons-react";
+import CircularText from "./CircularText/CircularText";
 
 export const BentoGrid = ({
   className,
@@ -26,17 +28,19 @@ export const BentoGridItem = ({
   description,
   header,
   url,
+  source,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
-  url?: string
+  url?: string;
+  source?: string
 }) => {
   return (
     <div
       className={cn(
-        "dark group/bento shadow-[#393BB2] row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-black p-6 transition duration-200 hover:shadow-lg dark:border-white/[0.2] dark:bg-black dark:shadow-none backdrop-filter backdrop-blur-sm bg-opacity-30",
+        "dark group/bento z-20 shadow-[#393BB2] row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-black p-6 transition duration-200 hover:shadow-lg dark:border-white/[0.2] dark:bg-black dark:shadow-none backdrop-filter backdrop-blur-sm bg-opacity-30 overflow-hidden",
         className
       )}
     >
@@ -49,9 +53,24 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-      <div className="group-hover/bento:-translate-y-1 mt-6 md:mt-0">
-        <CustomButton text="Read More" url={url} />
-        </div>
+      <div className="flex space-y-2 flex-wrap sm:space-y-0 sm:space-x-2 group-hover/bento:-translate-y-1 mt-6 md:mt-0">
+        <CustomButton text="Link" url={url} />
+        {source?.trim() ? (
+          <a href={source} target="_blank">
+          <div className="h-8 pt-[3.5px] ml-2 bg-black rounded-4xl">
+            <IconBrandGithub color="white"/>
+          </div>
+          </a>
+        ) : null}
+      </div>
+      <div className="absolute z-[-1] -bottom-20 -right-20">
+        <CircularText
+          text="HAHAHAHAHAHAHA"
+          onHover="slowDown"
+          spinDuration={10}
+          className="opacity-50"
+        />
+      </div>
     </div>
   );
 };

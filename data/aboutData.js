@@ -9,18 +9,20 @@ export const gridData=[
     title: "Mood Selector",
     description: "The Mood-Based Theme Selector is an AI-powered web app that adapts the website’s theme based on user emotions, using Next.js 15, Tailwind CSS, and OpenAI API to generate mood-based color palettes.",
     img: "/project1.png",
-    url: "http://mood-selector.vercel.app"
+    url: "http://mood-selector.vercel.app",
+    source: "https://github.com/ChirayuSahu/moodSelector",
   },
   {
     title: "Website for Rajesh Pharma",
     description: "A professionally designed website for Rajesh Pharma, developed using HTML, Tailwind CSS, and JavaScript.",
     img: "/project2.png",
-    url: "https://rajeshpharma.com"
+    url: "https://rajeshpharma.com",
   },
   {
     title: "UPI QR API",
     description: "A secure and efficient API enabling seamless UPI redirections. Built with python, it supports QR code generation using API, and returns JSON format for payment links.",
     url: "https://upi-redirection-api.vercel.app/",
+    source: "https://github.com/ChirayuSahu/upiRedirectionAPI",
 },
   {
     title: "Design Portfolio",
@@ -30,5 +32,7 @@ export const gridData=[
   {
     title: "Inventory Manager",
     description: "A modern inventory management website developed using Next.js, Firebase, and Tailwind CSS, designed to streamline inventory tracking and organization. The platform includes a secure Google Sign-In feature, allowing users to authenticate easily.",
+    url:"https://inv-manager-ch.vercel.app",
+    source: "https://github.com/ChirayuSahu/inventoryManager",
   },
 ];
